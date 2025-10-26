@@ -12,7 +12,7 @@ import { User } from './user/user';
     }
   @if (isLoggedIn) {
       <p>Welcome back, Friend!</p>
-      <section><app-user /></section>
+      <section><app-user [occupation]="occupation" /></section>
     }
   @if (isServerRunning) {
       <p>The server is running smoothly.</p>
@@ -36,6 +36,7 @@ export class App {
   city = 'San Francisco';
   isLoggedIn = true;
   message = '';
+  occupation = 'Developer';
   isServerRunning = true;
   operatingSystems = [{id: 'win', name: 'Windows'}, {id: 'osx', name: 'MacOS'}, {id: 'linux', name: 'Linux'}];
   isEditable = true;
