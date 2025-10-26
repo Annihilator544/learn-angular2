@@ -8,6 +8,13 @@ import { Comments } from "./comments/comments";
   selector: 'app-root',
   template: `
   <div [contentEditable]="isEditable">lsjhbvgokjhbslkjgvbsfklvg</div>
+  <nav>
+      <a href="/">Home</a>
+      |
+      <a href="/user">User</a>
+    </nav>
+    
+    <router-outlet />
   Hello {{ city }}! Welcome to {{ title() }}, {{ 1 + 1 }}!
   @for (os of operatingSystems; track os.id) {
       {{ os.name }}
@@ -44,7 +51,7 @@ import { Comments } from "./comments/comments";
       <p>Loading comments...</p>
     }
 `,
-  imports: [User, Child, Comments],
+  imports: [User, Child, Comments, RouterOutlet],
   styles: `
   :host {
     color: #a144eb;
