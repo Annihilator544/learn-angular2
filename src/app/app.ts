@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   template: `
-  Hello Universe
+  Hello {{ city }}! Welcome to {{ title() }}, {{ 1 + 1 }}!
 `,
   styles: `
   :host {
@@ -13,5 +13,6 @@ import { RouterOutlet } from '@angular/router';
 `,
 })
 export class App {
-  protected readonly title = signal('learn-angular2');
+  city = 'San Francisco';
+  protected readonly title = signal('learn-angular');
 }
