@@ -5,6 +5,7 @@ import { User } from './user/user';
 @Component({
   selector: 'app-root',
   template: `
+  <div [contentEditable]="isEditable">lsjhbvgokjhbslkjgvbsfklvg</div>
   Hello {{ city }}! Welcome to {{ title() }}, {{ 1 + 1 }}!
   @for (os of operatingSystems; track os.id) {
       {{ os.name }}
@@ -31,5 +32,6 @@ export class App {
   isLoggedIn = true;
   isServerRunning = true;
   operatingSystems = [{id: 'win', name: 'Windows'}, {id: 'osx', name: 'MacOS'}, {id: 'linux', name: 'Linux'}];
+  isEditable = true;
   protected readonly title = signal('learn-angular');
 }
