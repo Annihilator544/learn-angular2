@@ -10,7 +10,12 @@
       <img [ngSrc]="logoUrl" [alt]="logoAlt" width="32" height="32" />
     </li>
     </ul>
-<p>The user's occupation is {{occupation()}}</p>
+<p>The user's occupation is {{occupation}}</p>
 @for (user of users; track user.id) {
   <p>{{ user.name }}</p>
 }
+<p>{{ username }}'s favorite framework: {{ favoriteFramework }}</p>
+<label for="framework">
+  Favorite Framework:
+  <input id="framework" type="text" [(ngModel)]="favoriteFramework"/>
+</label>
