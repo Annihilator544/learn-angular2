@@ -1,20 +1,16 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { User } from './user/user';
-import { Child } from './child/child';
-import { Comments } from "./comments/comments";
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   template: `
   <nav>
-      <a href="/">Home</a>
-      |
-      <a href="/user">User</a>
+      <a routerLink="/">Home</a>
+      <a routerLink="/user">User</a>
     </nav>
     <router-outlet />
 `,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink],
   styles: `
   :host {
     color: #a144eb;
