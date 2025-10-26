@@ -19,6 +19,11 @@ import { User } from './user/user';
     } @else {
       <p>Server is down. Please try again later.</p>
     }
+    <button (click)="greet()">Greet</button>
+    <section (mouseover)="showSecretMessage()">
+      There's a secret message for you, hover to reveal 👀
+      {{ message }}
+    </section>
 `,
   imports: [User],
   styles: `
@@ -30,8 +35,15 @@ import { User } from './user/user';
 export class App {
   city = 'San Francisco';
   isLoggedIn = true;
+  message = '';
   isServerRunning = true;
   operatingSystems = [{id: 'win', name: 'Windows'}, {id: 'osx', name: 'MacOS'}, {id: 'linux', name: 'Linux'}];
   isEditable = true;
+  greet() {
+    console.log('Hello, there 👋');
+  }
+  showSecretMessage() {
+  this.message = 'Way to go 🚀';
+}
   protected readonly title = signal('learn-angular');
 }
