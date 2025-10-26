@@ -6,7 +6,15 @@ import { User } from './user/user';
   selector: 'app-root',
   template: `
   Hello {{ city }}! Welcome to {{ title() }}, {{ 1 + 1 }}!
-  <section><app-user /></section>
+  @if (isLoggedIn) {
+      <p>Welcome back, Friend!</p>
+      <section><app-user /></section>
+    }
+  @if (isServerRunning) {
+      <p>The server is running smoothly.</p>
+    } @else {
+      <p>Server is down. Please try again later.</p>
+    }
 `,
   imports: [User],
   styles: `
@@ -17,5 +25,7 @@ import { User } from './user/user';
 })
 export class App {
   city = 'San Francisco';
+  isLoggedIn = true;
+  isServerRunning = true;
   protected readonly title = signal('learn-angular');
 }
