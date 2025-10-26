@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { User } from './user/user';
+import { Child } from './child/child';
 
 @Component({
   selector: 'app-root',
@@ -24,8 +25,10 @@ import { User } from './user/user';
       There's a secret message for you, hover to reveal 👀
       {{ message }}
     </section>
+    <app-child (addItemEvent)="addItem($event)" />
+    <p>🐢 all the way down {{ items.length }}</p>
 `,
-  imports: [User],
+  imports: [User, Child],
   styles: `
   :host {
     color: #a144eb;
@@ -40,6 +43,10 @@ export class App {
   isServerRunning = true;
   operatingSystems = [{id: 'win', name: 'Windows'}, {id: 'osx', name: 'MacOS'}, {id: 'linux', name: 'Linux'}];
   isEditable = true;
+  items = new Array();
+  addItem(item: string) {
+    this.items.push(item);
+  }
   greet() {
     console.log('Hello, there 👋');
   }
