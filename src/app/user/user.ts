@@ -1,10 +1,10 @@
-import { NgOptimizedImage } from '@angular/common';
+import { LowerCasePipe, NgOptimizedImage } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-user',
-  imports: [NgOptimizedImage, FormsModule],
+  imports: [NgOptimizedImage, FormsModule, LowerCasePipe],
   templateUrl: './user.html',
   styleUrl: './user.scss',
 })
