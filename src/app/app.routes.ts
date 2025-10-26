@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { User } from './user/user';
 import { Forms } from './forms/forms';
+import { Pipes } from './pipes/pipes';
 
 export const routes: Routes = [
     {
@@ -18,5 +19,10 @@ export const routes: Routes = [
         path: 'forms',
         title: 'Forms Page',
         component: Forms,
+    },
+    {
+        path: 'pipes',
+        title: 'Pipes Page',
+        component: Pipes,
     }
 ];
