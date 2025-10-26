@@ -6,6 +6,9 @@ import { User } from './user/user';
   selector: 'app-root',
   template: `
   Hello {{ city }}! Welcome to {{ title() }}, {{ 1 + 1 }}!
+  @for (os of operatingSystems; track os.id) {
+      {{ os.name }}
+    }
   @if (isLoggedIn) {
       <p>Welcome back, Friend!</p>
       <section><app-user /></section>
@@ -27,5 +30,6 @@ export class App {
   city = 'San Francisco';
   isLoggedIn = true;
   isServerRunning = true;
+  operatingSystems = [{id: 'win', name: 'Windows'}, {id: 'osx', name: 'MacOS'}, {id: 'linux', name: 'Linux'}];
   protected readonly title = signal('learn-angular');
 }
